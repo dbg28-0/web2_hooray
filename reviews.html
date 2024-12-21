@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Reviews - CredZ</title>
+      <link rel="stylesheet" href="reviews.css">
+      <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet"/>
+    </head>
+  <body>
+      <!---Navigation Bar Image -->
+
+      <div class="navbar">
+        <div class="logo-container">
+            <img src="media/Gamer Cat.jfif.png" alt="credz logo" class="logo" />
+            <a href="Project.html" class="logo-text">CredZ</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="Project.html">HOME</a></li>
+            <li><a href="SERVICES.html">SERVICES</a></li>
+            <li><a href="contact_page.html">CONTACT US</a></li>
+            <li><a href="reviews.html">REVIEWS</a></li>
+            <li><a href="Our Team.html">ABOUT US</a></li>
+        </ul>
+        <div class="search-bar">
+            <input type="search" placeholder="Looking for something?" class="search-input" />
+            <button class="search-button">Search</button>
+        </div>
+    </div>
+    
+    <hr class="separator"/>
+
+    <!-- Reviews Section -->
+    <div class="header">
+      <h1>CUSTOMER FEEDBACK</h1>
+      </div>
+
+      <div class="wrtcont">
+        <p class="wrt">Write a review</p>
+        <form id="reviewFormElement">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required><br><br>
+        
+            <label for="product">Product</label>
+            <input type="text" id="product" name="product" required><br><br>
+        
+            <label for="review">Review</label>
+            <textarea id="review" name="review" placeholder="Write your review here" required></textarea><br><br>
+        
+            <button class="subb" type="submit">Submit</button>
+            <button class="center-button" onclick="showPopup()">Open Reviews</button>
+        </form>
+        
+ 
+      <div class="popup" id="myPopup">
+      <div class="popup-content">
+      <h2>Reviews</h2>
+        
+      <div class="review">
+       <h3>Jasper Garcia</h3>
+      <p class="p1">Mobile Legends</p>
+      <p  class="p1">Purchasing diamonds in Credz is a straightforward process, earning a solid 4 out of 5 rating. The user interface is intuitive, with various payment methods available to suit different preferences. The range of diamond bundles caters to both casual and heavy spenders, offering good flexbility.</p>
+      </div>
+
+      <div class="review">
+      <h3>Jason Erasga</h3>
+      <p class="p1">Valorant</p>
+      <p class="p1">The quality of transaction is good. So i give it 5 out of 5.</p>
+      </div>
+      <button class="close-btn" onclick="closePopup()">Close</button>
+      </div>
+      </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <a href="https://www.facebook.com/profile.php?id=61557073486966&mibextid=ZbWKwL" class="socmed-link">
+      <img src="ICons/facebook.png" alt="contact fb page for credz" class="socmed-image" />
+    </a>
+
+    <a href="https://www.instagram.com/credz.shop?igsh=ZTQ2ZDdocnJ0Z3F6" class="socmed-link">
+      <img src="ICons/instagram.png" alt="contact ig page for credz" class="socmed-image" />
+    </a>
+
+    <a href="https://t.me/credZzzz" class="socmed-link">
+      <img src="ICons/telegram.png" alt="contact Telegram page for credz" class="socmed-image" />
+    </a>
+
+    <a href="mailto:pepwmari@gmail.com" class="socmed-link">
+      <img src="ICons/gmail.png" alt="contact gmail page for credz" class="socmed-image" />
+    </a>
+
+    <p style="margin: 10px 0; font-size: 1.5em; font-weight: bold">CredZ</p>
+    <p style="margin: 5px 0">Copyright © 2024 CredZ Company, Inc.</p>
+    <p style="margin: 5px 0; color: #bdc3c7">
+      Develop by<b>
+        <a href="Our Team.html" style="color: lightblue; text-decoration: none">Web Web Hooray Team</a>
+      </b>
+    </p>
+
+    <p style="margin: 5px 0; font-size: 0.9em; font-style: italic">
+      If you encounter any issues, please contact us through the platforms above. We're here to help!
+    </p>
+  </footer>
+  
+    <script>
+      function showPopup() {
+      document.getElementById("myPopup").style.display ="block";
+      }
+      function closePopup() {
+      document.getElementById("myPopup").style.display ="none";
+      }
+      </script>
+  </body>
+</html>

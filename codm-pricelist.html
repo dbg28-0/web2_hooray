@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CredZ CODM Points</title>
+    <link rel="stylesheet" href="games-styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo&family=Orbitron&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="body">
+    <div class="container">
+      <div class="navbar">
+        <div class="logo-container">
+          <img src="media/Gamer Cat.jfif.png" alt="credz logo" class="logo" />
+          <a href="Project.html" class="logo-text">CredZ</a>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="Project.html">HOME</a></li>
+          <li><a href="SERVICES.html">SERVICES</a></li>
+          <li><a href="contact_page.html">CONTACT US</a></li>
+          <li><a href="reviews.html">REVIEWS</a></li>
+          <li><a href="Our Team.html">ABOUT US</a></li>
+        </ul>
+        
+        <div class="search-bar">
+          <input type="search" placeholder="Looking for something?" class="search-input" />
+          <button class="search-button">Search</button>
+          <!-- Search results displayed here -->
+          <div id="search-results" class="search-results" style="max-height: 200px; overflow-y: auto;"></div>
+        </div>
+      </div>
+
+      <div class="separator">
+        <hr class="line-separator" />
+      </div>
+
+      <div class="game-offers">
+        <h2 class="text-offers">
+          <img src="media/codm logo.jfif" alt="CODM Logo" class="games-logo">
+          COD Mobile
+        </h2>
+
+        <div class="offers-container">
+          <!-- Repeat this block for each offer -->
+          <div class="offer-item">
+            <img src="media/codm_points_logo.png" alt="CP icon" class="offer-img">
+            <p class="offer-title">100 CP</p>
+            <p class="offer-price">₱ 48</p>
+          </div>
+          <!-- Add other offer items here -->
+        </div>
+      </div>
+
+      <a href="orderfrom.html" class="order-link">Click Here to Order!</a>
+    </div>
+
+    <footer class="footer">
+      <a href="https://www.facebook.com/profile.php?id=61557073486966&mibextid=ZbWKwL" class="socmed-link">
+        <img src="ICons/facebook.png" alt="contact fb page for credz" class="socmed-image" />
+      </a>
+      <a href="https://www.instagram.com/credz.shop?igsh=ZTQ2ZDdocnJ0Z3F6" class="socmed-link">
+        <img src="ICons/instagram.png" alt="contact ig page for credz" class="socmed-image" />
+      </a>
+      <a href="https://t.me/credZzzz" class="socmed-link">
+        <img src="ICons/telegram.png" alt="contact Telegram page for credz" class="socmed-image" />
+      </a>
+      <a href="mailto:pepwmari@gmail.com" class="socmed-link">
+        <img src="ICons/gmail.png" alt="contact gmail page for credz" class="socmed-image" />
+      </a>
+
+      <p style="margin: 10px 0; font-size: 1.5em; font-weight: bold">CredZ</p>
+      <p style="margin: 5px 0">Copyright © 2024 CredZ Company, Inc.</p>
+      <p style="margin: 5px 0; color: #bdc3c7">
+        Developed by <b><a href="Our Team.html" style="color: lightblue; text-decoration: none">Web Web Hooray Team</a></b>
+      </p>
+      <p style="margin: 5px 0; font-size: 0.9em; font-style: italic">
+        If you encounter any issues, please contact us through the platforms above. We're here to help!
+      </p>
+    </footer>
+
+    <script>
+      const searchInput = document.querySelector(".search-input");
+      const searchResults = document.getElementById("search-results");
+
+      // List of games to search for
+      const games = [
+        { name: "codm", url: "codm-pricelist.html" },
+        { name: "genshin", url: "genshin-pricelist.html" },
+        { name: "hok", url: "hok-pricelist.html" },
+        { name: "league of legends", url: "leagueoflegends.html" },
+        { name: "mlbb", url: "mlbb-pricelist.html" },
+        { name: "roblox", url: "roblox-pricelist.html" },
+        { name: "valorant", url: "valorant-pricelist.html" }
+      ];
+
+      searchInput.addEventListener("input", function () {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+
+        // Clear previous results
+        searchResults.innerHTML = "";
+
+        // If search term is empty, do nothing
+        if (searchTerm === "") {
+          return;
+        }
+
+        // Filter games that start with the search term
+        const matches = games.filter(game => game.name.startsWith(searchTerm));
+
+        if (matches.length > 0) {
+          // Display search results
+          matches.forEach(match => {
+            const resultItem = document.createElement("div");
+            resultItem.classList.add("search-result-item");
+
+            const link = document.createElement("a");
+            link.href = match.url;
+            link.textContent = match.name.charAt(0).toUpperCase() + match.name.slice(1);
+            link.classList.add("search-result-link");
+
+            resultItem.appendChild(link);
+            searchResults.appendChild(resultItem);
+          });
+        } else {
+          // If no match, show no results message
+          const noResultMessage = document.createElement("p");
+          noResultMessage.textContent = "No results found.";
+          searchResults.appendChild(noResultMessage);
+        }
+      });
+
+      // Optional: You can also implement the search button functionality
+      document.querySelector(".search-button").addEventListener("click", function() {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        const match = games.find(game => game.name.startsWith(searchTerm));
+
+        if (match) {
+          window.location.href = match.url;
+        } else {
+          alert("Game not found!");
+        }
+      });
+    </script>
+  </body>
+</html>

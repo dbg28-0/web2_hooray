@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+    <link rel="stylesheet" href="ordeform.css">
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="order-form-container">
+        <h2>Order Your Game Credits</h2>
+        <form id="order-form">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+            <label for="game">Game Credit</label>
+            <select id="game" name="game" required onchange="showAdditionalFields()">
+                <option value="" disabled selected>Select Game</option>
+                <option value="mlbb">MLBB Dias</option>
+                <option value="valo">Valo Points</option>
+                <option value="codm">CODM Points</option>
+                <option value="robux">Robux</option>
+                <option value="hok">HoK Tokens</option>
+                <option value="genshin">Genshin</option>
+                <option value="honkai">Honkai</option>
+            </select>
+
+            <div id="additional-fields"></div>
+
+            <label for="amount">Amount</label>
+            <input type="number" id="amount" name="amount" placeholder="Enter Amount" min="1" required>
+
+            <label for="notes">Additional Notes</label>
+            <textarea id="notes" name="notes" placeholder="Optional Notes"></textarea>
+
+            <button type="submit" class="submit-button">Submit Order</button>
+        </form>
+        <button class="back-home" onclick="window.location.href='Project.html'">Back to Home</button>
+    </div>
+
+    <script>
+        function showAdditionalFields() {
+            const game = document.getElementById('game').value;
+            const additionalFields = document.getElementById('additional-fields');
+            additionalFields.innerHTML = '';
+
+            if (['mlbb', 'hok', 'genshin', 'honkai'].includes(game)) {
+                additionalFields.innerHTML = `
+                    <label for="ign">IGN</label>
+                    <input type="text" id="ign" name="ign" placeholder="In-Game Name" required>
+
+                    <label for="id">Game ID</label>
+                    <input type="text" id="id" name="id" placeholder="Your Game ID" required>
+
+                    <label for="server">Server</label>
+                    <input type="text" id="server" name="server" placeholder="Your Server" required>
+                `;
+            } else if (game === 'valo') {
+                additionalFields.innerHTML = `
+                    <label for="riot-id">Riot ID</label>
+                    <input type="text" id="riot-id" name="riot-id" placeholder="Your Riot ID" required>
+
+                    <label for="tagline">Tagline</label>
+                    <input type="text" id="tagline" name="tagline" placeholder="Your Tagline" required>
+                `;
+            } else if (game === 'codm') {
+                additionalFields.innerHTML = `
+                    <label for="codm-id">Game ID</label>
+                    <input type="text" id="codm-id" name="codm-id" placeholder="Your Game ID" required>
+
+                    <label for="usn">Username</label>
+                    <input type="text" id="usn" name="usn" placeholder="Your Username" required>
+                `;
+            } else if (game === 'robux') {
+                additionalFields.innerHTML = `
+                    <label for="gamepass-name">Gamepass Name</label>
+                    <input type="text" id="gamepass-name" name="gamepass-name" placeholder="Your Gamepass Name" required>
+
+                    <label for="gamepass-link">Gamepass Link</label>
+                    <input type="url" id="gamepass-link" name="gamepass-link" placeholder="https://..." required>
+                `;
+            }
+        }
+
+        // Validate form before submitting
+        document.getElementById('order-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            let isValid = true;
+            const requiredFields = document.querySelectorAll('input[required], select[required], textarea[required]');
+            
+            // Check if all required fields are filled
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValid = false;
+                    field.style.borderColor = 'red';
+                } else {
+                    field.style.borderColor = '';
+                }
+            });
+
+            // Show SweetAlert based on validation
+            if (!isValid) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Please fill up all the required options!',
+                });
+            } else {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success!',
+                    text: 'Your order has been recorded successfully!',
+                }).then(() => {
+                    // Optionally, you can reset the form or redirect to another page
+                    document.getElementById('order-form').reset();
+                });
+            }
+        });
+    </script>
+</body>
+</html>

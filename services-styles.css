@@ -1,0 +1,245 @@
+body {
+    background: linear-gradient(to bottom, #0a1e3f, #2b4a74);
+    font-family: 'Exo', sans-serif;
+    height: 1250px;
+    margin: 0;
+    color: #d6e0fb;
+}
+
+.container {
+    width: 100%;
+    height: 109vh;
+    margin: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background: linear-gradient(to bottom, #0a1e3f, #2b4a74);
+    padding: 10px 20px;
+    z-index: 1000;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+  }
+  
+  .logo-text {
+    color: #d9e1ff;
+    text-decoration: none;
+    font-size: 28px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+  }
+  
+  .nav-links li {
+    margin: 0 15px;
+  }
+  
+  .nav-links a {
+    color: #d9e1ff;
+    text-decoration: none;
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #fff;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-input {
+    font-family: 'Rubik', sans-serif;
+    width: 200px;
+    height: 35px;
+    border: 1px solid #d9e1ff;
+    border-radius: 5px 0 0 5px;
+    border-right: none;
+    padding: 5px;
+    color: #d9e1ff;
+    background-color: transparent;
+  }
+  
+  .search-input::placeholder {
+    color: #d9e1ff;
+  }
+  
+  .search-button {
+    font-size: 16px;
+    background-color: #d9e1ff;
+    border: none;
+    color: #000;
+    cursor: pointer;
+    height: 35px;
+    border-radius: 0 5px 5px 0;
+    padding: 5px 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+  
+    .navbar {
+      flex-wrap: wrap;
+    }
+  
+    .search-bar {
+      margin-top: 10px;
+      width: 100%;
+      justify-content: space-between;
+    }
+  
+    .search-input {
+      width: calc(100% - 80px);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .logo-text {
+      font-size: 20px;
+    }
+  
+    .search-input {
+      width: calc(100% - 60px);
+    }
+  }
+
+  .carousel-container {
+    position: relative;
+    max-width: 50%;
+    margin-left: 25%;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.promo-banner {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+    margin-bottom: 5%;
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    transform: translateY(-50%);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.title-container {
+    text-align: left;
+    margin-bottom: 25px;
+    padding-left: 20px;
+}
+
+.title-credits {
+    color: #d7dcfa;
+    font-size: 2.5em;
+    font-family: 'Exo', sans-serif;
+    margin-top: -20px;
+    margin-left: 22px;
+}
+
+.games-container {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: left; 
+    padding-left: 30px;
+    gap: 10px;
+}
+
+.game-card {
+    text-align: center;
+    width: 15%;
+    height: 10%;
+    background-color: #1c3a5b;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px #00000080;
+    margin: 10px; 
+}
+
+.game-link {
+    text-decoration: none;
+    color: #d6e0fb;
+}
+
+.game-logo {
+    width: 80%;
+    height: auto;
+    border: 2px solid #040021;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.game-title {
+    position: relative;
+    top: -20px;
+}
+
+.footer {
+    background-color: #001224;
+     text-align: center;
+     color: #bdc3c7;
+     font-family: 'Arial', sans-serif;
+     min-height: 80px;
+     overflow: hidden;
+     margin-top: 60px;
+}
+
+.socmed-link {
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.socmed-image {
+    width: 24px;
+    height: 24px;
+    margin-top: 20px;
+}

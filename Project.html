@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CredZ</title>
+  <link rel="stylesheet" href="Project.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet"  />
+  
+</head>
+
+
+<body>
+  <div class="background">
+
+    <div class="navbar">
+      <div class="logo-container">
+        <img src="media/Gamer Cat.jfif.png" alt="credz logo" class="logo" />
+        <a href="Project.html" class="logo-text">CredZ</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="SERVICES.html">SERVICES</a></li>
+        <li><a href="contact_page.html">CONTACT US</a></li>
+        <li><a href="reviews.html">REVIEWS</a></li>
+        <li><a href="Our Team.html">ABOUT US</a></li>
+      </ul>
+      <div class="search-bar">
+        <input type="search" placeholder="Looking for something?" class="search-input" />
+        <button class="search-button">Search</button>
+      </div>
+    </div>
+
+
+<div class="carousel-container">
+  <div class="carousel-slide">
+      <img src="media/codm logo.jfif" alt="call of duty" class="CODM" />
+      <img src="media/genshin logo.jfif" alt="genshin impact" class="GENSHIN" />
+      <img src="media/hok logo.jfif" alt="honor of kings" class="HOOK" />
+      <img src="media/honkai logo.png" alt="Honkai" class="HONKAI" />
+      <img src="media/mlbb logo.jfif" alt="Mobile Legends" class="Legends" />
+      <img src="media/roblox logo.jfif" alt="Roblox" class="ROBLOX" />
+      <img src="media/valorant logo.jfif" alt="Valorant" class="VALORANT" />
+      <img src="media/League of Legends.jpg" alt="League of legends" class="LOL" />
+
+      
+
+  </div>
+  
+  <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+  <button class="next" onclick="moveSlide(1)">&#10095;</button>
+</div>
+
+
+
+<script>
+ let currentIndex = 0;
+
+function moveSlide(direction) {
+  const slide = document.querySelector('.carousel-slide');
+  const slides = document.querySelectorAll('.carousel-slide img');
+  const totalSlides = slides.length;
+
+  currentIndex += direction;
+
+  if (currentIndex < 0) {
+    currentIndex = totalSlides - 1; 
+  } else if (currentIndex >= totalSlides) {
+    currentIndex = 0; 
+  }
+
+  const slideWidth = slides[0].clientWidth; 
+  slide.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+}
+
+// Automatically move to the next slide every 3 seconds (3000 milliseconds)
+setInterval(() => {
+  moveSlide(1); // Move to the next slide
+}, 3000); // Adjust this value for faster/slower transitions
+
+</script>
+
+
+
+<div class="content">
+
+  <hr class="separator"/>
+
+      <div class="text-content">
+        <h1>Welcome to <strong>CredZ</strong></h1>
+
+        <p>At CredZ, we provide gamers with easy access to in-game currencies, enhancing your gaming experience effortlessly.</p>
+        <div class="button-group">
+          <button onclick="location.href = 'services.html';" class="cta-button">Buy Now</button>
+          <div class="dropdown">
+            <button class="secondary-button">Available Games</button>
+            <ul class="dropdown-menu">
+              <li><a href="mlbb-pricelist.html">Mobile Legends: Bang Bang</a></li>
+              <li><a href="valorant-pricelist.html">Valorant</a></li>
+              <li><a href="codm-pricelist.html">Call of Duty: Mobile</a></li>
+              <li><a href="roblox-pricelist.html">Roblox</a></li>
+              <li><a href="leagueoflegends.html">League of Legends</a></li>
+              <li><a href="hok-pricelist.html">Honor of Kings</a></li>
+              <li><a href="honkai-pricelist.html">Honkai: Star Rail</a></li>
+              <li><a href="genshin-pricelist.html">Genshin Impact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="image-content">
+        <img src="media/juvia (1).png" alt="Juvia Pic" class="main-image" id="Juvs" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <a href="https://www.facebook.com/profile.php?id=61557073486966&mibextid=ZbWKwL" class="socmed-link">
+      <img src="ICons/facebook.png" alt="contact fb page for credz" class="socmed-image" />
+    </a>
+
+    <a href="https://www.instagram.com/credz.shop?igsh=ZTQ2ZDdocnJ0Z3F6" class="socmed-link">
+      <img src="ICons/instagram.png" alt="contact ig page for credz" class="socmed-image" />
+    </a>
+
+    <a href="https://t.me/credZzzz" class="socmed-link">
+      <img src="ICons/telegram.png" alt="contact Telegram page for credz" class="socmed-image" />
+    </a>
+
+    <a href="mailto:pepwmari@gmail.com" class="socmed-link">
+      <img src="ICons/gmail.png" alt="contact gmail page for credz" class="socmed-image" />
+    </a>
+
+    <p style="margin: 10px 0; font-size: 1.5em; font-weight: bold">CredZ</p>
+    <p style="margin: 5px 0">Copyright © 2024 CredZ Company, Inc.</p>
+    <p style="margin: 5px 0; color: #bdc3c7">
+      Develop by<b>
+        <a href="Our Team.html" style="color: lightblue; text-decoration: none">Web Web Hooray Team</a>
+      </b>
+    </p>
+
+    <p style="margin: 5px 0; font-size: 0.9em; font-style: italic">
+      If you encounter any issues, please contact us through the platforms above. We're here to help!
+    </p>
+  </footer>
+
+</body>
+</html>
